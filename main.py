@@ -1,46 +1,57 @@
 #!/usr/bin/env python3
 """The Moon Gets One Star -- entry builder (Akun 2, @wantorieta15).
 
-Entry (113 chars, one line, no trailing newline):
+REVISI (26 Nov 2026, reviser; builder HEAD 767dd41). Keputusan: PERTAHANKAN
+teks builder -- tidak ada kandidat pengganti yang jelas lebih kuat.
+
+Teks final (113 karakter, satu baris, tanpa newline di akhir):
 "One star. Every full moon my neighbor turns into a werewolf and howls
 till dawn. The Moon just hangs there, smug."
 
-Why this line (pola pemenang rank 1-2 bounty satu-baris sekeluarga,
-ditarik via API make.fun 26 Nov 2026 dan diverifikasi dari artifact.txt):
-- Laugh Sprint #1 (777.695): adegan konkret + sensorik (cokelat di
-  pantry, lampu mati) lalu twist di fragmen akhir ("like a raccoon
-  with a mortgage").
-- Laugh Sprint #2 (776.452): setup satu adegan (meal-prep Minggu) +
-  twist yang membalik setup (sereal di atas sink Senin).
-- Zero Use #1 (779.634): kekuatan absurd + batasan spesifik, ditutup
-  daftar yang memuncak di item paling memalukan ("at my own wedding").
+Kenapa dipertahankan (formula pemenang rank 1-2 keluarga satu-baris):
+- Laugh Sprint #1 (777.695): satu adegan konkret + sensorik, twist di
+  fragmen akhir ("like a raccoon with a mortgage").
+- Laugh Sprint #2 (776.452): setup satu adegan, twist membalik setup.
+- Zero Use #1 (779.634): absurd + batasan spesifik, ditutup item paling
+  memalukan ("at my own wedding").
 - Zero Use #2 (725.027): setup singkat + twist "sudah terpakai".
-Formula juara: SATU adegan konkret + satu keluhan spesifik + twist di
-fragmen terakhir, nada deadpan, tanpa "!", tanpa menjelaskan lelucon.
-Entri ini mengikuti formula itu: adegan tunggal (tetangga jadi
-werewolf tiap bulan purnama, melolong sampai subuh) + twist akhir
-("The Moon just hangs there, smug") -- keluhan yang HANYA bisa
-ditujukan ke Bulan (tanpa Bulan, tidak ada werewolf), bukan lelucon
-generik yang bisa ditukar ke produk lain. Bukan kawah/keju/terang
-(juri menghukum lelucon obvious itu), bukan pasang surut (sudah
-dipakai ramai di lapangan bounty ini + dipakai entri Akun 2 di bounty
-"The Moon Finally Answers Back").
+Formula juara: SATU adegan konkret + satu keluhan spesifik + punchline
+di kata-kata terakhir, nada deadpan, tanpa "!". Teks ini memenuhi
+ketiganya: adegan tunggal (tetangga jadi werewolf tiap purnama, melolong
+sampai subuh) + keluhan yang HANYA bisa ditujukan ke Bulan (tanpa Bulan,
+tidak ada werewolf) + punchline di kata terakhir ("smug").
 
-Kandidat yang kalah (semua 106-114 karakter, kemiripan maks vs juara
-0,24-0,32): C1 cahaya pinjaman Matahari (kuat, tapi twist "takes
-credit" lebih abstrak, kalah cepat tawa dibanding adegan werewolf);
-C3 janji purnama yang ghosting (dekat dengan sudut "takes two weeks
-off" yang sudah ada di lapangan); C4 bola golf Apollo (spesifik,
-tapi tahun 1969 salah -- golf Apollo 14 itu 1971 -- dan "tourists"
-melemahkan suara reviewer); C5 HOA + werewolf (dua lelucon ditumpuk,
-punchline "glowing" lebih lemah dari "smug").
+Kandidat pengganti yang ditimbang reviser dan DITOLAK:
+- "It turns my neighbor into a werewolf once a month and never once
+  apologized for the howling." -- punchline "never once apologized"
+  bagus, tapi "It" ambigu (Bulan baru jelas di kalimat kedua builder)
+  dan adegannya kurang hidup dibanding "howls till dawn".
+- "Full moon again, my neighbor is a werewolf howling till dawn, and
+  the Moon acts like it did nothing." -- punchline "acts like it did
+  nothing" kalah tajam dari satu kata "smug"; ritme juga lebih datar.
+- Sudut pasang surut / cahaya pinjaman / kawah-keju: DITOLAK -- pasang
+  dipakai Akun 1 di bounty ini; kawah/keju/terang dihukum juri sebagai
+  lelucon obvious; cahaya pinjaman twist-nya lebih abstrak.
+Jadi tidak ada pengganti yang JELAS lebih kuat -- teks builder bertahan.
 
-Kemiripan terukur (SequenceMatcher autojunk=False): vs juara maks
-0,299 (Laugh#1), rerata ~0,225 -- formula disalin, kata tidak
-disalin. Akun 1 (@walta-exchange) belum submit saat build ini
-(cek API submissions 26 Nov 14:5x WITA: tidak ada di 50 terbaru),
-jadi teks Akun 1 belum bisa dibandingkan langsung; sudut werewolf
-dipilih agar jelas berbeda dari tema pasang/terang yang umum.
+Beda dari Akun 1 (WAJIB: dua akun tidak boleh sama):
+Akun 1 (@walta-exchange, submission 01a216ab-4dbe-773e-a7ba-9354b5600e2d,
+106 karakter): "One star. It pulls the tides, ruins my sleep, then
+vanishes for a week every month like I wouldn't notice."
+Sudut Akun 1 = pasang + insomnia + Bulan menghilang; sudut Akun 2 =
+werewolf tetangga + Bulan yang smug menonton. Kemiripan
+SequenceMatcher (autojunk=False) Akun 2 vs Akun 1 = 0,2192 (rendah,
+hanya berbagi pembuka "One star." + struktur review). Guard di
+validate_entry() menolak bila teks sama persis dengan teks Akun 1.
+
+Kemiripan vs pemenang (SequenceMatcher, autojunk=False; diukur builder
+dari teks juara via API make.fun, tetap berlaku karena teks tidak
+berubah): maks 0,299 (vs Laugh Sprint #1), rerata ~0,225 -- formula
+disalin, kata tidak disalin.
+
+Anchor: makefun anchor drand round 34291009. Wallet Akun 2:
+adbmHyC8x5ZRYrQFBSi9uuaXpFRVs4CQQBsoEY5zGzk (terverifikasi di
+.makefun/freshness.json sebelum revisi ditulis).
 
 Writes exactly one line to <MAKEFUN_OUTPUT_DIR>/entry.txt (default
 /output). Pure stdlib. No network, no Pillow, no temp files.
@@ -51,18 +62,20 @@ import os
 
 ENTRY = "One star. Every full moon my neighbor turns into a werewolf and howls till dawn. The Moon just hangs there, smug."
 
+A1_ENTRY = "One star. It pulls the tides, ruins my sleep, then vanishes for a week every month like I wouldn't notice."
+
 EXPECTED_SHA256 = "8915d2ade592ce64c5b4608f2864e417da41b8bfb3b0b03e5bb3a4fc0e719c4c"
 EXPECTED_BYTES = 113
 EXPECTED_CHARS = 113
 
 
 def build_entry():
-    """Return the entry text, exactly as written by the builder."""
+    """Return the entry text, exactly as written (kept from builder)."""
     return ENTRY
 
 
 def validate_entry(text):
-    """Check the entry: one line, 1-120 chars, no '!', sha256 matches."""
+    """Check the entry: one line, 1-120 chars, no '!', not Akun 1's text, sha256 matches."""
     if not isinstance(text, str):
         raise ValueError("entry must be str")
     if "\n" in text or "\r" in text:
@@ -71,6 +84,8 @@ def validate_entry(text):
         raise ValueError(f"entry must be 1-120 chars, got {len(text)}")
     if "!" in text:
         raise ValueError("entry must not contain '!' (deadpan tone)")
+    if text == A1_ENTRY:
+        raise ValueError("entry must differ from Akun 1 entry")
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
     if digest != EXPECTED_SHA256:
         raise ValueError(f"entry sha256 mismatch: {digest} != {EXPECTED_SHA256}")
